@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Home | Expense Tracker{% endblock %}
+
+{% block content %}
+  <h1>Personal Expense &amp; Budget Manager</h1>
+  <p>Milestone 1 placeholder page. If you can read this, Django is serving
+     URL &rarr; view &rarr; template correctly.</p>
+  <p>Currency: <strong>₹ INR</strong></p>
+  <p>Admin: <a href="{% url 'admin:index' %}">/admin/</a></p>
+{% endblock %}

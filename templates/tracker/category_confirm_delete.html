@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Delete category | Expense Tracker{% endblock %}
+
+{% block content %}
+  <h1>Delete category</h1>
+
+  <p>
+    Are you sure you want to delete
+    <strong>{{ category.name }}</strong>
+    ({{ category.get_type_display }})?
+  </p>
+
+  <p>
+    A category that still has transactions cannot be deleted.
+  </p>
+
+  <form method="post">
+    {% csrf_token %}
+
+    <button type="submit">Yes, delete</button>
+
+    <a href="{% url 'tracker:category_list' %}">
+      Cancel
+    </a>
+  </form>
+{% endblock %}

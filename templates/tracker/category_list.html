@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Categories | Expense Tracker{% endblock %}
+
+{% block content %}
+  <h1>My categories</h1>
+
+  <p>
+    <a href="{% url 'tracker:category_create' %}">+ Add category</a>
+  </p>
+
+  {% if categories %}
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for category in categories %}
+          <tr>
+            <td>{{ category.name }}</td>
+            <td>{{ category.get_type_display }}</td>
+            <td>
+              <a href="{% url 'tracker:category_update' category.pk %}">
+                Edit
+              </a>
+              |
+              <a href="{% url 'tracker:category_delete' category.pk %}">
+                Delete
+              </a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>You have no categories yet.</p>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: #1f2933;
+  background: #f5f7fa;
+}
+.site-header { background: #1f4e79; padding: 0.75rem 1.5rem; }
+.brand { color: #fff; font-weight: 600; text-decoration: none; }
+.container { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
